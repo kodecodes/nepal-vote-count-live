@@ -1,10 +1,139 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<title>NepalVoteCount.live</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NepalVoteCount.live</title>
+  <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
-<h1>NepalVoteCount.live</h1>
-<p>Live Election Counting Updates</p>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-title">NepalVoteCount<span class="dot">.live</span></div>
+      <div class="brand-sub">Live Election Counting Updates</div>
+    </div>
+
+    <div class="top-badges">
+      <div class="pill" id="pill-source">Source: <strong>—</strong></div>
+      <div class="pill pill-live" id="pill-updated">
+        <span class="live-dot" aria-hidden="true"></span>
+        Last updated: <strong>—</strong>
+      </div>
+    </div>
+  </header>
+
+  <div class="disclaimer">
+    <strong>Disclaimer:</strong> Unofficial aggregator. Numbers may lag. Always verify with official sources.
+  </div>
+
+  <main class="wrap">
+    <section class="grid">
+      <!-- LEFT (wide) -->
+      <div class="col-left">
+        <div class="card">
+          <div class="card-head">
+            <h2>FPTP (165) — CONSTITUENCY UPDATES</h2>
+          </div>
+
+          <div class="table-wrap">
+            <table class="tbl" id="tbl-fptp">
+              <thead>
+                <tr>
+                  <th>CONSTITUENCY</th>
+                  <th>LEADING/WON</th>
+                  <th>PARTY</th>
+                  <th class="num">VOTES</th>
+                  <th class="num">MARGIN</th>
+                  <th class="center">STATUS</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td colspan="6" class="muted">Loading…</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card mt">
+          <div class="card-head row-between">
+            <h2>LATEST CHANGES</h2>
+            <div class="live-indicator"><span class="live-dot"></span> LIVE</div>
+          </div>
+
+          <div class="feed" id="feed">
+            <div class="feed-item muted">Loading…</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT (narrow) -->
+      <div class="col-right">
+        <div class="card">
+          <div class="card-head">
+            <h2>SEAT TALLY (FPTP)</h2>
+          </div>
+
+          <div class="table-wrap">
+            <table class="tbl" id="tbl-seat">
+              <thead>
+                <tr>
+                  <th>PARTY</th>
+                  <th class="num">LEADING</th>
+                  <th class="num">WON</th>
+                  <th class="num">TOTAL</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td colspan="4" class="muted">Loading…</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card mt">
+          <div class="card-head">
+            <h2>PR (110) — PARTY VOTES</h2>
+          </div>
+
+          <div class="table-wrap">
+            <table class="tbl" id="tbl-pr">
+              <thead>
+                <tr>
+                  <th>PARTY</th>
+                  <th class="num">VOTES</th>
+                  <th class="num">%</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td colspan="3" class="muted">Loading…</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="note">
+            * PR allocation may update later based on final proportional representation thresholds.
+          </div>
+        </div>
+
+        <div class="card mt">
+          <div class="card-head">
+            <h2>QUICK LINKS</h2>
+          </div>
+
+          <div class="links">
+            <a class="btn" id="link-ecn" href="#" target="_blank" rel="noopener">Official ECN Results</a>
+            <a class="btn" id="link-media1" href="#" target="_blank" rel="noopener">Media Dashboard 1</a>
+            <a class="btn" id="link-media2" href="#" target="_blank" rel="noopener">Media Dashboard 2</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      © <span id="year"></span> NepalVoteCount.live
+    </footer>
+  </main>
+
+  <script src="/app.js"></script>
 </body>
 </html>
